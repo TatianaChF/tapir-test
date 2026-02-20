@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <button class="header__menu-btn">
-      <img src="./../assets/menu.svg" alt="menu" />
+      <img src="../assets/logo.svg" alt="menu" />
     </button>
     <nav class="header__nav">
       <ul class="header__menu">
