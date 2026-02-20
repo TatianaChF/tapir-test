@@ -44,8 +44,8 @@ const links = [
 
 <style lang="scss" scoped>
 .header {
-  display: grid;
-  grid-template-columns: 365px 1fr;
+  display: flex;
+  gap: 23%;
   align-items: center;
 
   &__menu-btn {
