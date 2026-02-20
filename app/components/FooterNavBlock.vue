@@ -12,11 +12,7 @@
 </template>
 
 <script setup lang="ts">
-
-export type categotyType = {
-  text: string;
-  link: string;
-}
+import type {categotyType} from "~/types";
 
 defineProps({
   titleCategory: {
