@@ -5,4 +5,14 @@ export default defineNuxtConfig({
   css: [
     '~/assets/scss/main.scss'
   ],
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet'
+        }
+      ]
+    }
+  }
 })
