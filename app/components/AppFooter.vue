@@ -116,8 +116,8 @@ const company = [
 
   &__container {
     padding: 100px 60px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 315px);
   }
 }
 </style>
