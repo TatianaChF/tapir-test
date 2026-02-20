@@ -27,6 +27,10 @@
     font-weight: 500;
     font-size: 64px;
     margin-bottom: 40px;
+
+    @include mobile {
+      font-size: 26px;
+    }
   }
 
   &__btn {

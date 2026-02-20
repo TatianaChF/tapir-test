@@ -114,10 +114,22 @@ const company = [
   line-height: 140%;
   margin-left: -60px;
 
+  @include mobile {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
   &__container {
     padding: 100px 60px;
     display: grid;
     grid-template-columns: repeat(4, 315px);
+
+    @include mobile {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
   }
 }
 </style>

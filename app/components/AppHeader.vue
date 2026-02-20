@@ -1,7 +1,8 @@
 <template>
   <header class="header">
+    <img src="../assets/icons/logo.svg" alt="menu" />
     <button class="header__menu-btn">
-      <img src="../assets/logo.svg" alt="menu" />
+      <img src="../assets/icons/menu.svg" alt="menu" />
     </button>
     <nav class="header__nav">
       <ul class="header__menu">
@@ -48,15 +49,28 @@ const links = [
   gap: 23%;
   align-items: center;
 
+  @include mobile {
+    justify-content: space-between;
+  }
+
   &__menu-btn {
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+
+    @include mobile {
+      display: block;
+    }
   }
 
   &__nav {
     flex: 1;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__menu {
