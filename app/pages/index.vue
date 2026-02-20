@@ -17,7 +17,7 @@
 
 <style lang="scss" scoped>
 .page {
-  min-height: calc(100vh - 30px - 30px);
+  height: 100vh;
   display: flex;
   align-items: center;
 }
