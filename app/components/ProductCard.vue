@@ -3,12 +3,21 @@
       to="#"
       class="product-card"
   >
-    <img
-        :src="product.image"
-        :alt="product.name"
-        class="product-card__image"
-        loading="lazy"
-    />
+    <div class="product-card__image-wrapper">
+      <img
+          :src="product.image"
+          :alt="product.name"
+          class="product-card__image"
+          loading="lazy"
+      />
+      <button>
+        <img
+            src="./../assets/icons/favorite.svg"
+            alt="favorite"
+            class="product-card__favorite"
+        />
+      </button>
+    </div>
     <div class="product-card__info">
       <div class="product-card__price">
         <p>{{product.price}} ₽</p>
@@ -39,8 +48,20 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
   gap: 31px;
   color: black;
 
-  img {
-    width: 290px;
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__favorite {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 30px;
   }
 
   &__info {
