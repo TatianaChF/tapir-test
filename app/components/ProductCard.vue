@@ -10,11 +10,10 @@
           class="product-card__image"
           loading="lazy"
       />
-      <button>
+      <button class="product-card__favorite">
         <img
             src="./../assets/icons/favorite.svg"
             alt="favorite"
-            class="product-card__favorite"
         />
       </button>
     </div>
@@ -49,11 +48,20 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
   color: black;
   text-decoration: none;
 
+  @include mobile {
+    width: 150px;
+    gap: 20px;
+  }
+
   &__image-wrapper {
     position: relative;
     width: 100%;
     height: 290px;
     overflow: hidden;
+
+    @include mobile {
+      height: 150px;
+    }
   }
 
   &__image {
@@ -69,12 +77,19 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
 
   &__favorite {
     position: absolute;
+    background: none;
+    border: none;
     width: 24px;
     height: 24px;
     top: 16px;
     right: 16px;
     z-index: 2;
     cursor: default;
+
+    @include mobile {
+      top: 2px;
+      right: 2px;
+    }
   }
 
   &__info {
@@ -89,6 +104,12 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
     gap: 10px;
     font-size: 24px;
     font-weight: 500;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      gap: 9px;
+    }
   }
 
   &__split-price {
@@ -100,6 +121,10 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
 
   &__name {
     font-size: 16px;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }
 </style>
