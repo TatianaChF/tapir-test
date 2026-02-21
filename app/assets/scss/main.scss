@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Golos Text', sans-serif;
+  padding-top: 19px;
+  padding-left: 60px;
+  margin: 0;
+
+  @include mobile {
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
