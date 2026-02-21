@@ -3,7 +3,7 @@
     <main class="main">
       <h1>тестовое задание</h1>
       <NuxtLink
-          to="#"
+          to="/catalog"
           class="main__btn"
       >
         В каталог
