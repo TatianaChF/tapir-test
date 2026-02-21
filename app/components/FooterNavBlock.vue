@@ -4,7 +4,12 @@
     <nav>
       <ul class="block__nav">
         <li v-for="item of categoryLinks">
-          <NuxtLink :to="item.link">{{item.text}}</NuxtLink>
+          <NuxtLink
+              :to="item.link"
+              class="block__nav-link"
+          >
+            {{item.text}}
+          </NuxtLink>
         </li>
       </ul>
     </nav>
@@ -40,6 +45,10 @@ defineProps({
     display: flex;
     flex-direction: column;
     gap: 14px;
+  }
+
+  &__nav-link {
+    color: white;
   }
 }
 </style>

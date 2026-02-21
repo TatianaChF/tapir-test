@@ -7,7 +7,11 @@
     <nav class="header__nav">
       <ul class="header__menu">
         <li v-for="link of links">
-          <NuxtLink :to="link.link">{{link.text}}</NuxtLink>
+          <NuxtLink
+              :to="link.link"
+              class="header__menu-link">
+            {{link.text}}
+          </NuxtLink>
         </li>
       </ul>
     </nav>
@@ -77,6 +81,10 @@ const links = [
     display: flex;
     align-items: center;
     gap: 40px;
+  }
+
+  &__menu-link {
+    color: black;
   }
 }
 </style>
