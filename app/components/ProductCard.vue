@@ -47,21 +47,34 @@ const splitPrice = computed(() => Math.ceil(props.product.price / 2));
   flex-direction: column;
   gap: 31px;
   color: black;
+  text-decoration: none;
 
   &__image-wrapper {
     position: relative;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
   }
 
   &__image {
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    .product-card:hover & {
+      transform: scale(1.05);
+    }
   }
 
   &__favorite {
     position: absolute;
     width: 24px;
     height: 24px;
-    top: 10px;
-    right: 30px;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    cursor: default;
   }
 
   &__info {
