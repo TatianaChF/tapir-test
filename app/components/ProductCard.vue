@@ -13,7 +13,7 @@
       <div class="product-card__price">
         <p>{{product.price}} ₽</p>
         <p class="product-card__split-price">
-          {{product.price / 2}} x 2
+          {{splitPrice}} x 2
         </p>
       </div>
       <p class="product-card__name">{{product.name}}</p>
@@ -24,9 +24,11 @@
 <script lang="ts" setup>
 import type {Product} from "~/types";
 
-defineProps<{
+const props = defineProps<{
   product: Product
 }>()
+
+const splitPrice = computed(() => Math.ceil(props.product.price / 2));
 </script>
 
 <style lang="scss" scoped>
