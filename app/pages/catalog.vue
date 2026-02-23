@@ -85,6 +85,13 @@ onMounted(() => {
     background: none;
     border: 1px solid black;
     cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      transition: 0.5s;
+    }
   }
 
   p {

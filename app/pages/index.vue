@@ -38,6 +38,14 @@
     background-color: red;
     color: white;
     gap: 40px;
+    transition: 0.5s;
+
+    &:hover {
+      color: red;
+      border: 1px solid red;
+      background-color: white;
+      transition: 0.5s;
+    }
   }
 }
 </style>
