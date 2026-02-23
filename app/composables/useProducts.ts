@@ -36,6 +36,7 @@ export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
     return {
         products: displayedProducts,
         error,
+        loading,
         getProducts,
     }
 }

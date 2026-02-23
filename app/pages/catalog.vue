@@ -9,17 +9,24 @@
       />
     </div>
 
-    <div class="catalog__controls">
+    <p v-if="loading">Загрузка...</p>
+
+    <div
+        v-else
+        class="catalog__controls"
+    >
       <p v-if="error">{{error}}</p>
       <button class="catalog__btn">
-        Показать еще
+        {{textError}}
       </button>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const {products, error, getProducts} = useProducts();
+const {products, error, loading, getProducts} = useProducts();
+
+const textError = computed(() => error.value ? "Повторить" : "Показать еще");
 
 onMounted(() => {
   getProducts(1);
@@ -60,6 +67,10 @@ onMounted(() => {
     background: none;
     border: 1px solid black;
     cursor: pointer;
+  }
+
+  p {
+    font-size: 14px;
   }
 }
 </style>
