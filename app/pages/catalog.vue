@@ -9,14 +9,19 @@
       />
     </div>
 
-    <p v-if="loading">Загрузка...</p>
+    <p v-if="loading && products.length > 0">
+      Загрузка...
+    </p>
 
     <div
-        v-else
+        v-else-if="hasMore"
         class="catalog__controls"
     >
       <p v-if="error">{{error}}</p>
-      <button class="catalog__btn">
+      <button
+          class="catalog__btn"
+          @click="loadMore"
+      >
         {{textError}}
       </button>
     </div>
@@ -24,7 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-const {products, error, loading, getProducts} = useProducts();
+const {products, error, loading, hasMore, getProducts, loadMore} = useProducts();
 
 const textError = computed(() => error.value ? "Повторить" : "Показать еще");
 
