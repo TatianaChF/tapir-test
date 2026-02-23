@@ -22,7 +22,7 @@
           class="catalog__btn"
           @click="loadMore"
       >
-        {{textError}}
+        {{textBtn}}
       </button>
     </div>
   </div>
@@ -31,7 +31,7 @@
 <script lang="ts" setup>
 const {products, error, loading, hasMore, getProducts, loadMore} = useProducts();
 
-const textError = computed(() => error.value ? "Повторить" : "Показать еще");
+const textBtn = computed(() => error.value ? "Повторить" : "Показать еще");
 
 onMounted(() => {
   getProducts(1);
