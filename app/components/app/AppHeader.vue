@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <img
-        src="../assets/icons/logo.svg"
+        src="../../assets/icons/logo.svg"
         alt="logo"
     />
     <button class="header__menu-btn">
       <img
-          src="../assets/icons/menu.svg"
+          src="../../assets/icons/menu.svg"
           alt="menu"
       />
     </button>
