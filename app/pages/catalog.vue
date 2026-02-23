@@ -47,6 +47,12 @@ onMounted(() => {
   align-items: center;
   gap: 110px;
 
+  @include mobile {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 40px;
+  }
+
   h2 {
     font-size: 42px;
     font-weight: 500;
