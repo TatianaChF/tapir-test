@@ -1,8 +1,14 @@
 <template>
   <header class="header">
-    <img src="../assets/icons/logo.svg" alt="menu" />
+    <img
+        src="../../assets/icons/logo.svg"
+        alt="logo"
+    />
     <button class="header__menu-btn">
-      <img src="../assets/icons/menu.svg" alt="menu" />
+      <img
+          src="../../assets/icons/menu.svg"
+          alt="menu"
+      />
     </button>
     <nav class="header__nav">
       <ul class="header__menu">

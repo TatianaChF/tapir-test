@@ -113,6 +113,7 @@ const company = [
   font-size: 14px;
   line-height: 140%;
   margin-left: -60px;
+  margin-right: -60px;
 
   @include mobile {
     margin-left: -20px;
