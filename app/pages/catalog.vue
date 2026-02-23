@@ -1,5 +1,12 @@
 <template>
-  <div class="catalog">
+  <p v-if="loading && !products.length">
+    Загрузка...
+  </p>
+
+  <div
+      v-else
+      class="catalog"
+  >
     <h2>каталог</h2>
 
     <div class="catalog__products">
@@ -17,12 +24,12 @@
         v-else-if="hasMore"
         class="catalog__controls"
     >
-      <p v-if="error">{{error}}</p>
+      <p v-if="error">{{ error }}</p>
       <button
           class="catalog__btn"
           @click="loadMore"
       >
-        {{textBtn}}
+        {{ textBtn }}
       </button>
     </div>
   </div>
