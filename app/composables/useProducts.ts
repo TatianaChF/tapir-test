@@ -4,9 +4,12 @@ export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
     const products = ref<Product[]>([]);
     const currentPage = ref<number>(initialPage);
     const loading = ref<boolean>(false);
+    const error = ref<string | null>(null);
+    const hasMore = ref(true);
 
     const getProducts = async (page: number) => {
-        loading.value = true
+        loading.value = true;
+        error.value = null;
 
         try {
             const response = await $fetch<ProductsResponse>(`https://test-task-api.tapir.ws/products?page=${page}`);
@@ -18,10 +21,11 @@ export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
             }
 
             return response;
-        } catch (error) {
-            console.error(error);
+        } catch (err) {
+            console.error(err);
+            error.value = "Произошла ошибка, попробуйте позже";
 
-            throw error;
+            throw err;
         } finally {
             loading.value = false;
         }
@@ -31,6 +35,7 @@ export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
 
     return {
         products: displayedProducts,
+        error,
         getProducts,
     }
 }

@@ -8,11 +8,18 @@
           :product="product"
       />
     </div>
+
+    <div class="catalog__controls">
+      <p v-if="error">{{error}}</p>
+      <button class="catalog__btn">
+        Показать еще
+      </button>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-const {products, getProducts} = useProducts();
+const {products, error, getProducts} = useProducts();
 
 onMounted(() => {
   getProducts(1);
@@ -22,6 +29,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .catalog {
   margin-top: 100px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,6 +45,21 @@ onMounted(() => {
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+  }
+
+  &__btn {
+    padding: 10px 24px;
+    background: none;
+    border: 1px solid black;
+    cursor: pointer;
   }
 }
 </style>
