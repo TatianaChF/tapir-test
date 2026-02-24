@@ -1,6 +1,7 @@
 import type {Product, ProductsResponse} from "~/types";
+import {getProductsApi} from "~/api/products";
 
-export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
+export const useProducts = (initialPage = 1) => {
     const products = ref<Product[]>([]);
     const currentPage = ref<number>(initialPage);
     const loading = ref<boolean>(false);
@@ -15,16 +16,16 @@ export const useProducts = (initialPage = 1, itemsPerPage = 16) => {
         loading.value = true;
 
         try {
-            const response = await $fetch<ProductsResponse>(`https://test-task-api.tapir.ws/products?page=${page}`);
+            const data = await getProductsApi(page);
 
             if (page === 1) {
-                products.value = response.products
+                products.value = data.products
             } else {
-                products.value = [...products.value, ...response.products]
+                products.value = [...products.value, ...data.products]
             }
 
-            currentPage.value = response.currentPage;
-            hasMore.value = products.value.length < response.total;
+            currentPage.value = data.currentPage;
+            hasMore.value = products.value.length < data.total;
         } catch (err) {
             console.error(err);
             error.value = "Произошла ошибка, попробуйте позже";
