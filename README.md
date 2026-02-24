@@ -1,10 +1,11 @@
-# Nuxt Minimal Starter
+# Тестовое задание для "Тапир"
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Тестовое задание выполнено с использованием Nuxt 4, с серверным рендерингом (SSR), с TypeScript и SCSS. Проект 
+представляет собой каталог товаров, адаптивным дизайном и стилизацией по методологии БЭМ.
 
-## Setup
+## Установка
 
-Make sure to install dependencies:
+Установка зависимостей:
 
 ```bash
 # npm
@@ -20,9 +21,9 @@ yarn install
 bun install
 ```
 
-## Development Server
+## Сервер разработки
 
-Start the development server on `http://localhost:3000`:
+Запустите сервер разработки на `http://localhost:3000`:
 
 ```bash
 # npm
@@ -37,39 +38,3 @@ yarn dev
 # bun
 bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
