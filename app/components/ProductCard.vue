@@ -12,7 +12,7 @@
       />
       <button class="product-card__favorite">
         <img
-            src="./../assets/icons/favorite.svg"
+            src="~/assets/icons/favorite.svg"
             alt="favorite"
         />
       </button>
